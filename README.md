@@ -2,7 +2,7 @@
 
 React hook which gives a smooth scrolling function.
 
-## Example ([Codesandbox](https://codesandbox.io/s/github/Andarist/use-smooth-scroll/tree/master/examples/basic))
+## Example ([Codesandbox](https://codesandbox.io/s/github/Andarist/use-smooth-scroll/tree/master/examples/simple))
 
 ```js
 const Example = () => {
