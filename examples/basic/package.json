@@ -3,7 +3,7 @@
   "description": "This example demonstrates how to use useSmoothScroll hook.",
   "private": true,
   "main": "src/index.js",
-  "homepage": "https://codesandbox.io/s/github/Andarist/use-smooth-scroll/tree/master/example",
+  "homepage": "https://codesandbox.io/s/github/Andarist/use-smooth-scroll/tree/master/examples/basic",
   "keywords": [
     "react",
     "reactjs",
