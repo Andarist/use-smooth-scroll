@@ -1,0 +1,61 @@
+{
+  "name": "use-smooth-scroll",
+  "version": "0.0.0",
+  "description": "React hook which gives a smooth scrolling function.",
+  "keywords": [
+    "react",
+    "reactjs",
+    "hook",
+    "hooks",
+    "scroll"
+  ],
+  "main": "./dist/use-smooth-scroll.cjs.js",
+  "module": "./dist/use-smooth-scroll.esm.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "test": "echo \"Warning: no test specified\" || jest",
+    "prebuild": "rimraf dist",
+    "build": "rollup -c",
+    "preversion": "npm test",
+    "prepare": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Andarist/use-smooth-scroll.git"
+  },
+  "author": "Mateusz Burzyński <mateuszburzynski@gmail.com> (https://github.com/Andarist)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Andarist/use-smooth-scroll/issues"
+  },
+  "homepage": "https://github.com/Andarist/use-smooth-scroll#readme",
+  "peerDependencies": {
+    "react": "^16.7.0-alpha.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-transform-modules-commonjs": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "babel-plugin-macros": "^2.4.2",
+    "husky": "^1.1.0",
+    "jest": "^23.6.0",
+    "lint-staged": "^7.3.0",
+    "prettier": "^1.14.3",
+    "react": "16.7.0-alpha.0",
+    "react-dom": "16.7.0-alpha.0",
+    "rimraf": "^2.6.2",
+    "rollup": "^0.66.6",
+    "rollup-plugin-babel": "^4.0.3"
+  },
+  "dependencies": {
+    "@popmotion/easing": "^1.0.1",
+    "@popmotion/popcorn": "^0.1.2",
+    "callbag-duration-progress": "^1.0.1",
+    "callbag-flatten": "^1.2.0",
+    "callbag-map": "^1.0.1",
+    "callbag-subject": "^1.0.2",
+    "callbag-subscribe": "^1.4.1"
+  }
+}

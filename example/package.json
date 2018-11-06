@@ -1,0 +1,21 @@
+{
+  "name": "use-smooth-scroll-example",
+  "description": "This example demonstrates how to use useSmoothScroll hook.",
+  "private": true,
+  "main": "src/index.js",
+  "homepage": "https://codesandbox.io/s/github/Andarist/use-smooth-scroll/tree/master/example",
+  "keywords": [
+    "react",
+    "reactjs",
+    "hook",
+    "hooks",
+    "scroll"
+  ],
+  "dependencies": {
+    "emotion": "^9.2.12",
+    "react": "16.7.0-alpha.0",
+    "react-dom": "16.7.0-alpha.0",
+    "react-emotion": "^9.2.12",
+    "use-smooth-scroll": "^0.1.0"
+  }
+}
