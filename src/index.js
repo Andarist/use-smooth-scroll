@@ -2,9 +2,12 @@ import { easeOut } from '@popmotion/easing'
 import { mix } from '@popmotion/popcorn'
 import durationProgress from 'callbag-duration-progress'
 import flatten from 'callbag-flatten'
+import fromEvent from 'callbag-from-event'
 import map from 'callbag-map'
+import merge from 'callbag-merge'
 import subject from 'callbag-subject'
 import subscribe from 'callbag-subscribe'
+import takeUntil from 'callbag-take-until'
 import { useCallback, useEffect, useMemo } from 'react'
 import pipe from './pipe.macro'
 
@@ -31,6 +34,12 @@ export default function useSmoothScroll(axis, ref, easing = easeOut) {
                 : duration,
             ),
             map(p => mix(start, target, easing(p))),
+            takeUntil(
+              merge(
+                fromEvent(ref.current, 'wheel'),
+                fromEvent(ref.current, 'touchstart'),
+              ),
+            ),
           )
         }),
         flatten,

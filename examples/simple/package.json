@@ -17,7 +17,7 @@
     "react-dom": "16.7.0-alpha.0",
     "react-emotion": "^9.2.12",
     "react-scripts": "2.0.3",
-    "use-smooth-scroll": "^0.1.0"
+    "use-smooth-scroll": "^0.1.1"
   },
   "devDependencies": {},
   "scripts": {

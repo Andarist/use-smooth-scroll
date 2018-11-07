@@ -54,8 +54,11 @@
     "@popmotion/popcorn": "^0.1.2",
     "callbag-duration-progress": "^1.0.1",
     "callbag-flatten": "^1.2.0",
+    "callbag-from-event": "^1.1.0",
     "callbag-map": "^1.0.1",
+    "callbag-merge": "^3.1.0",
     "callbag-subject": "^1.0.2",
-    "callbag-subscribe": "^1.4.1"
+    "callbag-subscribe": "^1.4.1",
+    "callbag-take-until": "^1.1.0"
   }
 }
