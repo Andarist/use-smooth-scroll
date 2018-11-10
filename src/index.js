@@ -1,5 +1,6 @@
 import { easeOut } from '@popmotion/easing'
 import { mix } from '@popmotion/popcorn'
+import arePassiveEventsSupported from 'are-passive-events-supported'
 import durationProgress from 'callbag-duration-progress'
 import flatten from 'callbag-flatten'
 import fromEvent from 'callbag-from-event'
@@ -12,6 +13,7 @@ import pipe from 'pipeline.macro'
 import { useCallback, useEffect, useMemo } from 'react'
 
 const ONCE = []
+const PASSIVE = arePassiveEventsSupported() ? { passive: true } : undefined
 
 export default function useSmoothScroll(axis, ref, easing = easeOut) {
   const scrollProperty = axis === 'x' ? 'scrollLeft' : 'scrollTop'
@@ -36,8 +38,8 @@ export default function useSmoothScroll(axis, ref, easing = easeOut) {
             map(p => mix(start, target, easing(p))),
             takeUntil(
               merge(
-                fromEvent(ref.current, 'wheel'),
-                fromEvent(ref.current, 'touchstart'),
+                fromEvent(ref.current, 'wheel', PASSIVE),
+                fromEvent(ref.current, 'touchstart', PASSIVE),
               ),
             ),
           )

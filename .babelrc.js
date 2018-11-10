@@ -1,15 +1,18 @@
+const { NODE_ENV } = process.env
+const test = NODE_ENV === 'test'
+const loose = true
+
 module.exports = {
   presets: [
     [
       '@babel/env',
       {
-        loose: true,
+        loose,
         modules: false,
       },
     ],
   ],
-  plugins: [
-    'macros',
-    process.env.NODE_ENV === 'test' && '@babel/transform-modules-commonjs',
-  ].filter(Boolean),
+  plugins: [test && '@babel/transform-modules-commonjs', 'macros'].filter(
+    Boolean,
+  ),
 }
