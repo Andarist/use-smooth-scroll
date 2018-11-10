@@ -38,6 +38,7 @@
     "@babel/core": "^7.1.5",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/preset-env": "^7.1.5",
+    "babel-plugin-annotate-pure-calls": "^0.4.0",
     "babel-plugin-macros": "^2.4.2",
     "husky": "^1.1.0",
     "jest": "^23.6.0",

@@ -12,7 +12,9 @@ module.exports = {
       },
     ],
   ],
-  plugins: [test && '@babel/transform-modules-commonjs', 'macros'].filter(
-    Boolean,
-  ),
+  plugins: [
+    test && '@babel/transform-modules-commonjs',
+    'annotate-pure-calls',
+    'macros',
+  ].filter(Boolean),
 }
