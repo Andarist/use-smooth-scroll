@@ -8,8 +8,8 @@ import merge from 'callbag-merge'
 import subject from 'callbag-subject'
 import subscribe from 'callbag-subscribe'
 import takeUntil from 'callbag-take-until'
+import pipe from 'pipeline.macro'
 import { useCallback, useEffect, useMemo } from 'react'
-import pipe from './pipe.macro'
 
 const ONCE = []
 

@@ -42,6 +42,7 @@
     "husky": "^1.1.0",
     "jest": "^23.6.0",
     "lint-staged": "^7.3.0",
+    "pipeline.macro": "^1.0.0",
     "prettier": "^1.14.3",
     "react": "16.7.0-alpha.0",
     "react-dom": "16.7.0-alpha.0",
