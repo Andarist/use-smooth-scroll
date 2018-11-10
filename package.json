@@ -53,7 +53,7 @@
   "dependencies": {
     "@popmotion/easing": "^1.0.1",
     "@popmotion/popcorn": "^0.1.2",
-    "callbag-duration-progress": "^1.0.1",
+    "callbag-duration-progress": "^1.0.2",
     "callbag-flatten": "^1.2.0",
     "callbag-from-event": "^1.2.0",
     "callbag-map": "^1.0.1",
