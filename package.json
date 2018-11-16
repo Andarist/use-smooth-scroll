@@ -19,6 +19,7 @@
     "prebuild": "rimraf dist",
     "build": "rollup -c",
     "preversion": "npm test",
+    "postversion": "npm publish && git push --follow-tags",
     "prepare": "npm run build"
   },
   "repository": {
