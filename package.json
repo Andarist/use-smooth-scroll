@@ -1,6 +1,6 @@
 {
   "name": "use-smooth-scroll",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "React hook which gives a smooth scrolling function.",
   "keywords": [
     "react",
