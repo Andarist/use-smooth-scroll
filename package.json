@@ -54,7 +54,7 @@
   },
   "dependencies": {
     "@popmotion/easing": "^1.0.1",
-    "@popmotion/popcorn": "^0.2.0",
+    "@popmotion/popcorn": "^0.3.0",
     "are-passive-events-supported": "^1.0.0",
     "callbag-duration-progress": "^1.0.3",
     "callbag-flatten": "^1.2.0",
@@ -63,6 +63,6 @@
     "callbag-merge": "^3.1.0",
     "callbag-subject": "^1.0.2",
     "callbag-subscribe": "^1.5.0",
-    "callbag-take-until": "^1.1.0"
+    "callbag-take-until": "^2.0.0"
   }
 }
