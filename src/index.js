@@ -16,7 +16,7 @@ import useConstant from 'use-constant'
 const ONCE = []
 const PASSIVE = arePassiveEventsSupported() ? { passive: true } : undefined
 
-export default function useSmoothScroll(axis, ref, easing = easeOut) {
+export default function useSmoothScroll(axis, ref) {
   const command$ = useConstant(subject)
   const argumentsRef = useRef()
 
@@ -27,16 +27,19 @@ export default function useSmoothScroll(axis, ref, easing = easeOut) {
     ]
   })
 
-  const scrollTo = useCallback((target, duration = 300) => {
-    const [scrollProperty, node] = argumentsRef.current
-    command$(1, [scrollProperty, node, target, duration])
-  }, ONCE)
+  const scrollTo = useCallback(
+    (target, { duration = 300, easing = easeOut } = {}) => {
+      const [scrollProperty, node] = argumentsRef.current
+      command$(1, [scrollProperty, node, target, duration, easing])
+    },
+    ONCE,
+  )
 
   useEffect(
     () =>
       pipe(
         command$,
-        map(([scrollProperty, node, target, duration]) => {
+        map(([scrollProperty, node, target, duration, easing]) => {
           const recyclable = [node, scrollProperty, 0]
           const start = node[scrollProperty]
 
