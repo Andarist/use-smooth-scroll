@@ -10,44 +10,57 @@ import subject from 'callbag-subject'
 import subscribe from 'callbag-subscribe'
 import takeUntil from 'callbag-take-until'
 import pipe from 'pipeline.macro'
-import { useCallback, useEffect } from 'react'
+import { useCallback, useEffect, useRef } from 'react'
 import useConstant from 'use-constant'
 
 const ONCE = []
 const PASSIVE = arePassiveEventsSupported() ? { passive: true } : undefined
 
 export default function useSmoothScroll(axis, ref, easing = easeOut) {
-  const scrollProperty = axis === 'x' ? 'scrollLeft' : 'scrollTop'
   const command$ = useConstant(subject)
+  const argumentsRef = useRef()
+
+  useEffect(() => {
+    argumentsRef.current = [
+      axis === 'x' ? 'scrollLeft' : 'scrollTop',
+      ref.current,
+    ]
+  })
 
   const scrollTo = useCallback((target, duration = 300) => {
-    command$(1, [target, duration])
+    const [scrollProperty, node] = argumentsRef.current
+    command$(1, [scrollProperty, node, target, duration])
   }, ONCE)
 
   useEffect(
     () =>
       pipe(
         command$,
-        map(([target, duration]) => {
-          const start = ref.current[scrollProperty]
+        map(([scrollProperty, node, target, duration]) => {
+          const recyclable = [node, scrollProperty, 0]
+          const start = node[scrollProperty]
+
           return pipe(
             durationProgress(
               typeof duration === 'function'
                 ? duration(Math.abs(target - start))
                 : duration,
             ),
-            map(p => mix(start, target, easing(p))),
+            map(p => {
+              recyclable[2] = mix(start, target, easing(p))
+              return recyclable
+            }),
             takeUntil(
               merge(
-                fromEvent(ref.current, 'wheel', PASSIVE),
-                fromEvent(ref.current, 'touchstart', PASSIVE),
+                fromEvent(node, 'wheel', PASSIVE),
+                fromEvent(node, 'touchstart', PASSIVE),
               ),
             ),
           )
         }),
         flatten,
-        subscribe(v => {
-          ref.current[scrollProperty] = v
+        subscribe(([node, scrollProperty, v]) => {
+          node[scrollProperty] = v
         }),
       ),
     ONCE,
