@@ -11,8 +11,10 @@
   ],
   "main": "./dist/use-smooth-scroll.cjs.js",
   "module": "./dist/use-smooth-scroll.esm.js",
+  "types": "./types/index.d.ts",
   "files": [
-    "dist"
+    "dist",
+    "types"
   ],
   "scripts": {
     "test": "echo \"Warning: no test specified\" || jest",
@@ -33,36 +35,40 @@
   },
   "homepage": "https://github.com/Andarist/use-smooth-scroll#readme",
   "peerDependencies": {
-    "react": "^16.7.0-alpha.0"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.1.5",
     "@babel/plugin-transform-modules-commonjs": "^7.1.0",
     "@babel/preset-env": "^7.1.5",
+    "@babel/preset-typescript": "^7.1.0",
+    "@types/react": "^16.8.1",
     "babel-plugin-annotate-pure-calls": "^0.4.0",
     "babel-plugin-macros": "^2.4.2",
     "husky": "^1.1.0",
     "jest": "^23.6.0",
     "lint-staged": "^8.0.4",
-    "pipeline.macro": "^1.0.0",
+    "pipeline.macro": "^1.1.0",
     "prettier": "^1.15.2",
-    "react": "16.7.0-alpha.0",
-    "react-dom": "16.7.0-alpha.0",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
     "rimraf": "^2.6.2",
     "rollup": "^0.67.0",
-    "rollup-plugin-babel": "^4.0.3"
+    "rollup-plugin-babel": "^4.0.3",
+    "typescript": "^3.3.1"
   },
   "dependencies": {
     "@popmotion/easing": "^1.0.1",
     "@popmotion/popcorn": "^0.3.0",
-    "are-passive-events-supported": "^1.0.0",
-    "callbag-duration-progress": "^1.0.3",
-    "callbag-flatten": "^1.2.0",
-    "callbag-from-event": "^1.2.0",
-    "callbag-map": "^1.0.1",
-    "callbag-merge": "^3.1.0",
+    "are-passive-events-supported": "^1.1.0",
+    "callbag": "^1.1.0",
+    "callbag-duration-progress": "^2.0.0",
+    "callbag-flatten": "^1.4.0",
+    "callbag-from-event": "^1.2.1",
+    "callbag-map": "^1.1.0",
+    "callbag-merge": "^3.2.0",
     "callbag-subject": "^1.0.2",
-    "callbag-subscribe": "^1.5.0",
-    "callbag-take-until": "^2.0.0"
+    "callbag-subscribe": "^1.5.1",
+    "callbag-take-until": "^2.0.1"
   }
 }
