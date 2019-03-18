@@ -12,7 +12,8 @@
   "main": "./dist/use-smooth-scroll.cjs.js",
   "module": "./dist/use-smooth-scroll.esm.js",
   "files": [
-    "dist"
+    "dist",
+    "*.d.ts"
   ],
   "scripts": {
     "test": "echo \"Warning: no test specified\" || jest",
