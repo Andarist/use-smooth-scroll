@@ -43,7 +43,8 @@
     "callbag-merge": "^3.2.1",
     "callbag-subject": "^1.0.2",
     "callbag-subscribe": "^1.5.1",
-    "callbag-take-until": "^3.0.0"
+    "callbag-take-until": "^3.0.0",
+    "use-constant": "^1.0.0"
   },
   "peerDependencies": {
     "react": "^16.8.0"

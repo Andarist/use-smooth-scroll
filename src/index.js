@@ -10,14 +10,15 @@ import subject from 'callbag-subject'
 import subscribe from 'callbag-subscribe'
 import takeUntil from 'callbag-take-until'
 import pipe from 'pipeline.macro'
-import { useCallback, useEffect, useMemo } from 'react'
+import { useCallback, useEffect } from 'react'
+import useConstant from 'use-constant'
 
 const ONCE = []
 const PASSIVE = arePassiveEventsSupported() ? { passive: true } : undefined
 
 export default function useSmoothScroll(axis, ref, easing = easeOut) {
   const scrollProperty = axis === 'x' ? 'scrollLeft' : 'scrollTop'
-  const command$ = useMemo(subject, ONCE)
+  const command$ = useConstant(subject)
 
   const scrollTo = useCallback((target, duration = 300) => {
     command$(1, [target, duration])
