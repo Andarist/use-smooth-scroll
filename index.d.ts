@@ -1,6 +1,9 @@
-import { MutableRefObject } from 'react'
+import { RefObject } from 'react'
 
 export default function useSmoothScroll(
   axis: 'x' | 'y',
-  ref: MutableRefObject<HTMLElement>,
-): (options?: { duration?: number; easing?: (p: number) => number }) => void
+  ref: RefObject<HTMLElement>,
+): (
+  target: number,
+  options?: { duration?: number; easing?: (p: number) => number },
+) => void
