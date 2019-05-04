@@ -42,6 +42,7 @@
     "callbag-from-event": "^1.2.1",
     "callbag-map": "^1.1.0",
     "callbag-merge": "^3.2.2",
+    "callbag-of": "^2.0.0",
     "callbag-subject": "^1.0.2",
     "callbag-subscribe": "^1.5.1",
     "callbag-take-until": "^3.0.0",
