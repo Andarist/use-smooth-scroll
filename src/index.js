@@ -44,7 +44,7 @@ export default function useSmoothScroll(axis, ref) {
           const recyclable = [node, scrollProperty, 0]
           const start = node[scrollProperty]
 
-          const resolvedDuration = Math.min(
+          const resolvedDuration = Math.max(
             0,
             typeof duration === 'function'
               ? duration(Math.abs(target - start))
